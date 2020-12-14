@@ -1,0 +1,36 @@
+BEL road.png,BEL road,64.27
+BTM Layout.png,BTM Layout,30.73
+Banashankari.png,Banashankari,25.46
+Bannerghatta.png,Bannerghatta,47.49
+Basaveshwaranagar.png,Basaveshwaranagar,22.35
+Basvangudi.png,Basvangudi,32.55
+Bellandur.png,Bellandur,37.88
+CV Raman Nagar.png,CV Raman Nagar,38.34
+Cubbon.png,Cubbon,59.64
+Domlur.png,Domlur,44.41
+Electronic City.png,Electronic City,29.28
+HSR.png,HSR,30.16
+Hebbal.png,Hebbal,22.6
+Indiranagar.png,Indiranagar,43.83
+JP Nagar.png,JP Nagar,21.98
+Jalahalli.png,Jalahalli,54.05
+Jayanagar.png,Jayanagar,26.54
+Kengeri.png,Kengeri,53.7
+Koramangala.png,Koramangala,44.07
+Krishnarajapuram.png,Krishnarajapuram,31.22
+Kumaraswamy Layout.png,Kumaraswamy Layout,25.67
+Lalbagh.png,Lalbagh,50.75
+MG road.png,MG road,52.05
+Malleswaram.png,Malleswaram,37.94
+Marathahalli.png,Marathahalli,32.31
+Nagarbhavi.png,Nagarbhavi,32.11
+Padmanabhanagar.png,Padmanabhanagar,22.53
+Peenya.png,Peenya,26.48
+Rajajinagar.png,Rajajinagar,20.81
+Shivajinagar.png,Shivajinagar,41.11
+Varthur.png,Varthur,57.76
+Vasanth Nagar.png,Vasanth Nagar,50.85
+Vijayanagar.png,Vijayanagar,22.09
+Whitefield.png,Whitefield,43.1
+Yelahanka.png,Yelahanka,35.77
+Yeshwanthpur.png,Yeshwanthpur,34.28
