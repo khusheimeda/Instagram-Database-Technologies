@@ -1,0 +1,23 @@
+Create (p:Person {name: 'Chris Hemsworth'}) return p
+
+MATCH (p:Person {name: 'Chris Hemsworth'}) return p
+
+Create (m:Movie {title: 'Extraction'}) return m
+
+MERGE (m:Movie {title: 'Extraction'}) on MATCH SET m.shotin="India" return m
+
+MERGE (p:Person {name: 'Chris Hemsworth'}) on MATCH SET p.age=37 return p
+
+MATCH (p:Person), (m:Movie) 
+WHERE p.name="Chris Hemsworth" and m.title="Extraction" 
+CREATE (p)-[r:ACTED_IN]->(m) 
+RETURN type(r)
+
+MATCH (p:Person), (m:Movie) 
+WHERE p.name="Aaron Sorkin" and m.title="Extraction" 
+CREATE (p)-[w:WATCHED]->(m) 
+RETURN type(w)
+
+MATCH (p:Person)-[r:ACTED_IN]->(m:Movie) RETURN p,r,m
+
+MATCH (p:Person {name: 'Chris Hemsworth'}), (m:Movie {title:'Extraction'}) return p, m

@@ -1,0 +1,53 @@
+use InstagramDB 
+
+db.users.insert({userId:1, username: "user1", firstname: "user", lastname: "one", email: "u1@gmail.com", password: "password", 
+settings: {bio: "Hi! I am user1", privacy: "private"}})
+
+db.users.insert({userId: 2, username: "user2", firstname: "user2", email:"u2@gmail.com", password: "pwd", 
+settings:{privacy: "public"}}) 
+
+show collections 
+
+function insertUser(username, firstname, lastname, email, password, others){
+db.users.insert({username:username, firstname:firstname, lastname:lastname, settings:others});} 
+
+insertUser("user3", "user", "three", "u3@yahoo.com", "password", {bio: "Hi! I am user3", privacy:"public"}) 
+
+db.users.find().count()
+
+db.users.find()
+
+db.users.update({_id: ObjectId("5f9ef9f17917e018ad0b6c02")}, { $set: { "privacy": "private"}})
+
+db.users.find()
+
+db.users.updateMany({}, {$unset: {userId: 1}}) 
+
+db.users.find()
+
+db.users.remove({"username": "user1"}) 
+
+db.users.find()
+
+populateUsers = function(start, stop){                                
+for(var i=start; i<stop; i++){                                                                                     
+var username= "user" + i;                                                                                           
+var firstname="U" + i;                                                                                             
+var email="u"+i+"@gmail.com";                                                                                       
+var password="password";                                                                                           
+db.users.insert({                                                                                                  
+_id: username,                                                                                                       
+firstname: firstname,                                                                                               
+email: email,                                                                                                       
+password: password                                                                                                                                                                                                          
+});                                                                                                                 
+print("Inserted user" + username);                                                                                  
+}
+print("Done");
+}
+
+populateUsers(3, 100)
+
+db.users.aggregate([{$group: { _id: "$privacy", count:{$sum:1}}}])
+
+db.users.drop()

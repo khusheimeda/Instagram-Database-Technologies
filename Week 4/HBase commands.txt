@@ -1,0 +1,45 @@
+create 'users', 'identification', 'credentials', 'settings'
+
+put 'users', 'r1', 'identification:username', 'user1'
+put 'users', 'r1', 'credentials:email', 'u1@gmail.com', 1604340038329
+put 'users', 'r1', 'credentials:password', 'u1', 1604340038329
+put 'users', 'r1', 'settings:bio', 'Hi! I am user1', 1604340038329
+put 'users', 'r1', 'settings:privacy', 'private', 1604340038329
+scan 'users'
+
+put 'users', 'r2', 'identification:username', 'user2'
+put 'users', 'r2', 'credentials:email', 'u2@gmail.com'
+put 'users', 'r2', 'credentials:password', 'u2'
+put 'users', 'r2', 'settings:privacy', 'public'
+scan 'users'
+
+count 'users'
+describe 'users'
+
+get 'users', 'r2'
+
+disable 'users'
+alter 'users', {NAME => 'settings', VERSIONS => 3}
+enable 'users'
+put 'users', 'r1', 'settings:privacy', 'public'
+get 'users', 'r1', {COLUMN => 'settings', VERSIONS => 3}
+
+put 'users', 'r1', 'settings:privacy', 'private'
+get 'users', 'r1', {COLUMN => 'settings', VERSIONS => 3}
+put 'users', 'r1', 'settings:privacy', 'public'
+get 'users', 'r1', {COLUMN => 'settings', VERSIONS => 3}
+put 'users', 'r1', 'settings:privacy', 'private'
+get 'users', 'r1', {COLUMN => 'settings', VERSIONS => 3}
+
+delete 'users', 'r1', 'settings:privacy', 1604341042835
+get 'users', 'r1'
+
+deleteall 'users', 'r1'
+scan 'users'
+
+truncate 'users'
+
+disable 'users'
+drop 'users'
+
+
